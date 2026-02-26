@@ -13,6 +13,22 @@ const UF_OPTIONS = [
   { value: 22, text: "PI", key: "uf" },
   { value: 23, text: "CE", key: "uf" },
   { value: 24, text: "RN", key: "uf" },
+  { value: 25, text: "PB" },
+  { value: 26, text: "PE" },
+  { value: 27, text: "AL" },
+  { value: 28, text: "SE" },
+  { value: 29, text: "BA" },
+  { value: 31, text: "MG" },
+  { value: 32, text: "ES" },
+  { value: 33, text: "RJ" },
+  { value: 35, text: "SP" },
+  { value: 41, text: "PR" },
+  { value: 42, text: "SC" },
+  { value: 43, text: "RS" },
+  { value: 50, text: "MS" },
+  { value: 51, text: "MT" },
+  { value: 52, text: "GO" },
+  { value: 53, text: "DF" },
 ];
 
 export default function FormEntregador() {
