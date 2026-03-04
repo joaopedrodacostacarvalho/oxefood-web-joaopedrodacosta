@@ -1,8 +1,24 @@
 import InputMask from "comigo-tech-react-input-mask";
 import { Button, Container, Divider, Form, Icon } from "semantic-ui-react";
-import MenuSistema from "../../MenuSistema";
 
 export default function FormProduto() {
+
+  // TODO por or value={} em cada campo e usar o onChange para setar cada um
+  // Use o useState 
+
+  function salvar() {
+    let produtoRequest = {};
+
+    axios
+      .post("http://localhost:8080/api/produto", produtoRequest)
+      .then((response) => {
+        console.log("Produto cadastrado com sucesso");
+      })
+      .catch((error) => {
+        console.error("Erro ao incluir um produto");
+      });
+  }
+
   return (
     <div>
       <MenuSistema tela={'produto'} />
@@ -24,14 +40,28 @@ export default function FormProduto() {
           <div style={{ marginTop: "4%" }}>
             <Form>
               <Form.Group widths="equal">
-                <Form.Input required fluid label="Título" maxLength="100" placeholder="Informe o título do produto" />
+                <Form.Input
+                  required
+                  fluid
+                  label="Título"
+                  maxLength="100"
+                  placeholder="Informe o título do produto"
+                />
 
-                <Form.Input required fluid label="Código do Produto" width={12} >
-                  <InputMask required mask="999.999.999-99" placeholder="Informe o código do produto" />
+                <Form.Input required fluid label="Código do Produto" width={12}>
+                  <InputMask
+                    required
+                    mask="999.999.999-99"
+                    placeholder="Informe o código do produto"
+                  />
                 </Form.Input>
               </Form.Group>
 
-              <Form.TextArea fluid label="Descrição" placeholder="Informe a descrição do produto" />
+              <Form.TextArea
+                fluid
+                label="Descrição"
+                placeholder="Informe a descrição do produto"
+              />
 
               <Form.Group>
                 <Form.Input fluid label="Valor Unitário" width={6}>
@@ -39,14 +69,15 @@ export default function FormProduto() {
                 </Form.Input>
 
                 <Form.Input fluid label="Tempo de Entrega Mínimo em Minutos" width={6}>
-                  <InputMask mask="9999.9999" placeholder="30" />
+                  <InputMask mask="9999.9999" placeholder="30"/>
                 </Form.Input>
 
-                <Form.Input fluid label="Tempo de Entrega Máximo em Minutos" width={6}>
-                  <InputMask
-                    mask="9999.99999"
-                    placeholder="40"
-                  />
+                <Form.Input
+                  fluid
+                  label="Tempo de Entrega Máximo em Minutos"
+                  width={6}
+                >
+                  <InputMask mask="9999.99999" placeholder="40" />
                 </Form.Input>
               </Form.Group>
             </Form>
