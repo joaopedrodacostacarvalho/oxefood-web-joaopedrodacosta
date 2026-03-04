@@ -1,10 +1,12 @@
 import InputMask from "comigo-tech-react-input-mask";
-import React from "react";
-import { Button, Container, Divider, Form, FormInput, Icon } from "semantic-ui-react";
+import { Button, Container, Divider, Form, Icon } from "semantic-ui-react";
+import MenuSistema from "../../MenuSistema";
 
 export default function FormProduto() {
   return (
     <div>
+      <MenuSistema tela={'produto'} />
+
       <div style={{ marginTop: "3%" }}>
         <Container textAlign="justified">
           <h2>
@@ -37,7 +39,7 @@ export default function FormProduto() {
                 </Form.Input>
 
                 <Form.Input fluid label="Tempo de Entrega Mínimo em Minutos" width={6}>
-                  <InputMask mask="9999.9999" placeholder="30"/>
+                  <InputMask mask="9999.9999" placeholder="30" />
                 </Form.Input>
 
                 <Form.Input fluid label="Tempo de Entrega Máximo em Minutos" width={6}>
