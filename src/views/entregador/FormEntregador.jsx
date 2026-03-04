@@ -1,3 +1,4 @@
+import axios from "axios";
 import InputMask from "comigo-tech-react-input-mask";
 import { Button, Container, Divider, Form, FormField, FormGroup, Icon, Radio } from "semantic-ui-react";
 
@@ -32,6 +33,27 @@ const UF_OPTIONS = [
 ];
 
 export default function FormEntregador() {
+
+
+  // TODO por or value={} em cada campo e usar o onChange para setar cada um
+  // Use o useState 
+
+
+  function salvar() {
+    let entregadorRequest = {
+
+    };
+
+
+    axios.post("http://localhost:8080/api/entregador", entregadorRequest)
+      .then((response) => {
+        console.log("Entregador cadastrado com sucesso");
+      })
+      .catch((error) => {
+        console.error("Erro ao incluir um entregador")
+      })
+  }
+
   return (
     <div>
       <div style={{ marginTop: "3%" }}>
