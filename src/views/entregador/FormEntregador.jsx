@@ -72,11 +72,6 @@ export default function FormEntregador() {
       ativo: ativo,
     };
 
-    function handleAtivoChange(e, { value }) {
-      setAtivo(value === "true");
-    }
-
-
     axios.post("http://localhost:8080/api/entregador", entregadorRequest)
       .then((response) => {
         console.log("Entregador cadastrado com sucesso");
@@ -201,7 +196,7 @@ export default function FormEntregador() {
                   name='ativo'
                   value='true'
                   checked={ativo === true}
-                  onChange={handleAtivoChange}
+                  onChange={e => setAtivo(e.value === "true")}
                 />
                 <FormField>
                 </FormField>
@@ -211,7 +206,7 @@ export default function FormEntregador() {
                     name='ativo'
                     value='false'
                     checked={ativo === true}
-                    onChange={handleAtivoChange}
+                    onChange={e => setAtivo(e.value === "true")}
                   />
                 </FormField>
               </Form.Group>
