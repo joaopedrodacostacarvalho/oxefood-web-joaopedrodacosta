@@ -59,16 +59,6 @@ export default function FormCliente() {
 
       <div style={{ marginTop: "3%" }}>
         <Container textAlign="justified">
-          <h2>
-            {" "}
-            <span style={{ color: "darkgray" }}>
-              {" "}
-              Cliente &nbsp;
-              <Icon name="angle double right" size="small" />{" "}
-            </span>{" "}
-            Cadastro{" "}
-          </h2>
-
           {idCliente === undefined &&
             <h2> <span style={{ color: 'darkgray' }}> Cliente &nbsp;<Icon name='angle double right' size="small" /> </span> Cadastro</h2>
           }
